@@ -145,7 +145,7 @@ response = client.create_training_job(
   #  ]
   #},
   StoppingCondition={
-    'MaxRuntimeInSeconds': 60 * 5
+    'MaxRuntimeInSeconds': 60 * 60
   },
   Tags=[
     {
