@@ -45,6 +45,46 @@ response = client.create_training_job(
   RoleArn='arn:aws:iam::472846177579:role/service-role/AmazonSageMaker-ExecutionRole-20180912T152967',
   InputDataConfig=[
     {
+      'ChannelName': 'train_annotation',
+      'DataSource': {
+        'S3DataSource': {
+          'S3DataType': 'S3Prefix',
+          'S3Uri': 's3://sieling.household/train',
+          'S3DataDistributionType': 'FullyReplicated',
+          'AttributeNames': [
+  #          'string',
+          ]
+        }
+      },
+      'ContentType': 'application/imageio',
+      'CompressionType': 'None',
+      'RecordWrapperType': 'None',
+      'InputMode': 'File',
+      'ShuffleConfig': {
+        'Seed': 123
+      }
+    },
+    {
+      'ChannelName': 'validation',
+      'DataSource': {
+        'S3DataSource': {
+          'S3DataType': 'S3Prefix',
+          'S3Uri': 's3://sieling.household/train',
+          'S3DataDistributionType': 'FullyReplicated',
+          'AttributeNames': [
+  #          'string',
+          ]
+        }
+      },
+      'ContentType': 'application/imageio',
+      'CompressionType': 'None',
+      'RecordWrapperType': 'None',
+      'InputMode': 'File',
+      'ShuffleConfig': {
+        'Seed': 123
+      }
+    },
+    {
       'ChannelName': 'train',
       'DataSource': {
         'S3DataSource': {
