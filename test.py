@@ -56,7 +56,7 @@ response = client.create_training_job(
           ]
         }
       },
-      'ContentType': 'application/imageio',
+      'ContentType': 'application/x-image',
       'CompressionType': 'None',
       'RecordWrapperType': 'None',
       'InputMode': 'File',
@@ -76,7 +76,7 @@ response = client.create_training_job(
           ]
         }
       },
-      'ContentType': 'application/imageio',
+      'ContentType': 'application/x-image',
       'CompressionType': 'None',
       'RecordWrapperType': 'None',
       'InputMode': 'File',
@@ -96,7 +96,7 @@ response = client.create_training_job(
           ]
         }
       },
-      'ContentType': 'application/imageio',
+      'ContentType': 'application/x-image',
       'CompressionType': 'None',
       'RecordWrapperType': 'None',
       'InputMode': 'File',
