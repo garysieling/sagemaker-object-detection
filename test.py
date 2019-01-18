@@ -10,7 +10,26 @@ job = t.strftime('%Y-%m-%d-%H-%M-%S')
 response = client.create_training_job(
   TrainingJobName='object-detection-' + job,
   HyperParameters={
-  #  'string': 'string'
+    'base_network': 'vgg-16',
+    'early_stopping': 'false',
+    'early_stopping_min_epochs': '10',
+    'early_stopping_patience': '5',
+    'early_stopping_tolerance': '0.0',
+    'epochs': '30',
+    'freeze_layer_pattern': 'false',
+    'image_shape': '300',
+    'label_width': '350',
+    'learning_rate': '0.001',
+    'lr_scheduler_factor': '0.1',
+    'mini_batch_size': '32',
+    'momentum': '0.9',
+    'nms_threshold': '0.45',
+    'num_classes': '1',
+    'num_training_samples': '300',
+    'optimizer': 'sgd',
+    'overlap_threshold': '0.5',
+    'use_pretrained_model': '1',
+    'weight_decay': '0.0005'
   },
   AlgorithmSpecification={
     'TrainingImage': '811284229777.dkr.ecr.us-east-1.amazonaws.com/object-detection:latest',
