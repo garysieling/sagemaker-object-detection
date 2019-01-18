@@ -64,6 +64,26 @@ response = client.create_training_job(
         'Seed': 123
       }
     },
+        {
+      'ChannelName': 'train',
+      'DataSource': {
+        'S3DataSource': {
+          'S3DataType': 'S3Prefix',
+          'S3Uri': 's3://sieling.household/train',
+          'S3DataDistributionType': 'FullyReplicated',
+          'AttributeNames': [
+  #          'string',
+          ]
+        }
+      },
+      'ContentType': 'application/x-image',
+      'CompressionType': 'None',
+      'RecordWrapperType': 'None',
+      'InputMode': 'File',
+      'ShuffleConfig': {
+        'Seed': 123
+      }
+    }, 
     {
       'ChannelName': 'validation',
       'DataSource': {
@@ -85,7 +105,7 @@ response = client.create_training_job(
       }
     },
     {
-      'ChannelName': 'train',
+      'ChannelName': 'validation_annotation',
       'DataSource': {
         'S3DataSource': {
           'S3DataType': 'S3Prefix',
