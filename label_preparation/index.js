@@ -1,4 +1,8 @@
-const labels = ['termite_tubes', 'hot_water_expansion_tank'];
+const labels = [
+  'termite_tubes', 
+  'hot_water_expansion_tank',
+  'asbestos_paper_insulation'
+];
 
 const fs = require('fs');
 let script = '';
