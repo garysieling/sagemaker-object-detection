@@ -1,0 +1,25 @@
+{
+  "file": "images/fd2ecb06-083c-470d-a4d7-79273bcc4ed9___termite%20tubes_OIP.6AouLANhZycF43jRVWvXbAHaFj.jpg",
+  "image_size": [
+    {
+      "width": 474,
+      "height": 355,
+      "depth": 3
+    }
+  ],
+  "annotations": [
+    {
+      "class_id": 0,
+      "left": 35,
+      "width": 144,
+      "top": 66,
+      "height": 266
+    }
+  ],
+  "categories": [
+    {
+      "class_id": 0,
+      "name": "termite_tubes"
+    }
+  ]
+}

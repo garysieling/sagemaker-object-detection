@@ -1,0 +1,25 @@
+{
+  "file": "images/2f6c4fc2-5b3c-4cba-ae29-64a0857c1e27___hot_water_expansion_tank_OIP.wfJ743mqo83rhzbBGTNLkgHaEL.jpg",
+  "image_size": [
+    {
+      "width": 474,
+      "height": 267,
+      "depth": 3
+    }
+  ],
+  "annotations": [
+    {
+      "class_id": 1,
+      "left": 87,
+      "width": 185,
+      "top": 34,
+      "height": 218
+    }
+  ],
+  "categories": [
+    {
+      "class_id": 1,
+      "name": "hot_water_expansion_tank"
+    }
+  ]
+}
