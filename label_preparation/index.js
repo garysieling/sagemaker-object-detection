@@ -1,7 +1,8 @@
 const labels = [
   'termite_tubes', 
   'hot_water_expansion_tank',
-  'asbestos_paper_insulation'
+  'asbestos_paper_insulation',
+  'pedestal_sump_pump'
 ];
 
 const fs = require('fs');
