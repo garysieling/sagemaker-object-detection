@@ -89,7 +89,7 @@ response = client.create_training_job(
       'DataSource': {
         'S3DataSource': {
           'S3DataType': 'S3Prefix',
-          'S3Uri': 's3://sieling.household/train',
+          'S3Uri': 's3://sieling.household/validation',
           'S3DataDistributionType': 'FullyReplicated',
           'AttributeNames': [
   #          'string',
@@ -109,7 +109,7 @@ response = client.create_training_job(
       'DataSource': {
         'S3DataSource': {
           'S3DataType': 'S3Prefix',
-          'S3Uri': 's3://sieling.household/train',
+          'S3Uri': 's3://sieling.household/validation_annotation',
           'S3DataDistributionType': 'FullyReplicated',
           'AttributeNames': [
   #          'string',

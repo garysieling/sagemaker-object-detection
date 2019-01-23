@@ -1,0 +1,39 @@
+{
+  "file": "validation/442358df-dfed-47f5-bdf9-b71dbce55b71___frames_out398.jpg",
+  "image_size": [
+    {
+      "width": 1080,
+      "height": 1920,
+      "depth": 3
+    }
+  ],
+  "annotations": [
+    {
+      "class_id": 4,
+      "left": 95,
+      "width": 244,
+      "top": 780,
+      "height": 515
+    },
+    {
+      "class_id": 4,
+      "left": 515,
+      "width": 74,
+      "top": 1024,
+      "height": 381
+    },
+    {
+      "class_id": 4,
+      "left": 607,
+      "width": 455,
+      "top": 1018,
+      "height": 899
+    }
+  ],
+  "categories": [
+    {
+      "class_id": 4,
+      "name": "validation1"
+    }
+  ]
+}

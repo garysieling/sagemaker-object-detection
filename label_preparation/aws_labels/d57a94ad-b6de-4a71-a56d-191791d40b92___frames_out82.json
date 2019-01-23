@@ -1,0 +1,25 @@
+{
+  "file": "validation/d57a94ad-b6de-4a71-a56d-191791d40b92___frames_out82.jpg",
+  "image_size": [
+    {
+      "width": 1080,
+      "height": 1920,
+      "depth": 3
+    }
+  ],
+  "annotations": [
+    {
+      "class_id": 4,
+      "left": 652,
+      "width": 425,
+      "top": 613,
+      "height": 822
+    }
+  ],
+  "categories": [
+    {
+      "class_id": 4,
+      "name": "validation1"
+    }
+  ]
+}

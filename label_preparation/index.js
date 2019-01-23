@@ -2,10 +2,12 @@ const labels = [
   'termite_tubes', 
   'hot_water_expansion_tank',
   'asbestos_paper_insulation',
-  'pedestal_sump_pump'
+  'pedestal_sump_pump',
+  'validation1'
 ];
 
 const fs = require('fs');
+
 let script = '';
 
 let test = '';
@@ -28,8 +30,10 @@ labels.map(
         if (!data.annotation) { return ; }
 
         console.log(JSON.stringify(data, null, 2));
+        const labels_dir = label === 'validation1' ? 'validation_labels' : 'labels';
+        const images_dir = label === 'validation1' ? 'validation' : 'images';
         const file = data.content.replace(/.*[/]/, '');
-        const out = 'labels/' + file.replace(/[.]jpeg/, '.jpg');
+        const out = images_dir + '/' + file.replace(/[.]jpeg/, '.jpg');
 	      script = script + 'curl -o ' + out + ' ' + data.content + "\n";
 		    let labels = "";
 
@@ -71,7 +75,7 @@ labels.map(
         const filename = file.substring(0, file.lastIndexOf('.'));
 
         const aws_data = {
-          "file": "images/" + filename + '.jpg',
+          "file": images_dir + "/" + filename + '.jpg',
           "image_size": [
             {
               "width": imageWidth,
@@ -90,7 +94,7 @@ labels.map(
 
         fs.writeFileSync('./aws_labels/' + filename + '.json', 
 		    	JSON.stringify(aws_data, null, 2)); 
-        fs.writeFileSync('./labels/' + filename + '.txt', labels);
+        fs.writeFileSync('./' + labels_dir + '/' + filename + '.txt', labels);
         if (Math.random() > 0.25) {
 			    train += out + "\n";
         } else {
