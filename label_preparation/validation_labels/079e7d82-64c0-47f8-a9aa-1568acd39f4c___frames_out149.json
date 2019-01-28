@@ -1,0 +1,76 @@
+{
+  "file": "validation/079e7d82-64c0-47f8-a9aa-1568acd39f4c___frames_out149.jpg",
+  "image_size": [
+    {
+      "width": 1080,
+      "height": 1920,
+      "depth": 3
+    }
+  ],
+  "annotations": [
+    {
+      "class_id": 9,
+      "left": 637,
+      "width": 437,
+      "top": 777,
+      "height": 768
+    },
+    {
+      "class_id": 8,
+      "left": 0,
+      "width": 405,
+      "top": 813,
+      "height": 703
+    }
+  ],
+  "categories": [
+    {
+      "class_id": 0,
+      "name": "termite_tubes"
+    },
+    {
+      "class_id": 1,
+      "name": "hot_water_expansion_tank"
+    },
+    {
+      "class_id": 2,
+      "name": "asbestos"
+    },
+    {
+      "class_id": 3,
+      "name": "pedestal_sump_pump"
+    },
+    {
+      "class_id": 4,
+      "name": "fuel_tank"
+    },
+    {
+      "class_id": 5,
+      "name": "water_softener"
+    },
+    {
+      "class_id": 6,
+      "name": "breaker_box"
+    },
+    {
+      "class_id": 7,
+      "name": "fire_damage"
+    },
+    {
+      "class_id": 8,
+      "name": "washer"
+    },
+    {
+      "class_id": 9,
+      "name": "dryer"
+    },
+    {
+      "class_id": 10,
+      "name": "smoke_detector"
+    },
+    {
+      "class_id": 11,
+      "name": "furnace"
+    }
+  ]
+}

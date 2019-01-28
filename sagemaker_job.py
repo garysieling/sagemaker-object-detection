@@ -24,7 +24,7 @@ response = client.create_training_job(
     'mini_batch_size': '32',
     'momentum': '0.9',
     'nms_threshold': '0.45',
-    'num_classes': '1',
+    'num_classes': '12',
     'num_training_samples': '300',
     'optimizer': 'sgd',
     'overlap_threshold': '0.5',
