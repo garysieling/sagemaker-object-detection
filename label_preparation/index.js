@@ -12,8 +12,8 @@ const classIds = {}
 classIds['termite_tubes'] = 0;
 classIds['termite tubes'] = 0;
 classIds['hot_water_expansion_tank'] = 1;
-classIds['asbestos_paper_insulation'] = 2;
 classIds['asbestos'] = 2;
+classIds['asbestos_paper_insulation'] = 2;
 classIds['pedestal_sump_pump'] = 3;
 classIds['fuel_tank'] = 4;
 classIds['water_softener'] = 5;
@@ -73,7 +73,7 @@ labels.map(
         //console.log(JSON.stringify(data, null, 2));
         const labels_dir = label === 'validation1' ? 'validation_txt' : 'labels';
         const aws_labels_dir = label === 'validation1' ? 'validation_labels' : 'aws_labels';
-        const images_dir = label === 'validation1' ? 'validation' : 'images';
+        const images_dir = 'images';
         const file = data.content.replace(/.*[/]/, '');
         const out = images_dir + '/' + file.replace(/[.]jpeg/, '.jpg');
 	      script = script + 'curl -o ' + out + ' ' + data.content + "\n";
@@ -104,7 +104,7 @@ labels.map(
 		    		//const string = "0 0.5 0.5 0.100 0.100";
         //const string = `14 0.750704225352 0.834 0.402816901408 0.332`;
 			    	//labels = labels + string + "\n";
-            if (classIds[label] !== undefined) {
+            if (classIds[label] == undefined) {
               console.log(label);
             }
 
