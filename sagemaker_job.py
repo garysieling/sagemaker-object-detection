@@ -24,7 +24,7 @@ response = client.create_training_job(
     'mini_batch_size': '32',
     'momentum': '0.9',
     'nms_threshold': '0.45',
-    'num_classes': '12',
+    'num_classes': '4',
     'num_training_samples': '300',
     'optimizer': 'sgd',
     'overlap_threshold': '0.5',
@@ -131,7 +131,7 @@ response = client.create_training_job(
   },
   ResourceConfig={
     #'InstanceType': 'ml.m4.xlarge'|'ml.m4.2xlarge'|'ml.m4.4xlarge'|'ml.m4.10xlarge'|'ml.m4.16xlarge'|'ml.m5.large'|'ml.m5.xlarge'|'ml.m5.2xlarge'|'ml.m5.4xlarge'|'ml.m5.12xlarge'|'ml.m5.24xlarge'|'ml.c4.xlarge'|'ml.c4.2xlarge'|'ml.c4.4xlarge'|'ml.c4.8xlarge'|'ml.p2.xlarge'|'ml.p2.8xlarge'|'ml.p2.16xlarge'|'ml.p3.2xlarge'|'ml.p3.8xlarge'|'ml.p3.16xlarge'|'ml.c5.xlarge'|'ml.c5.2xlarge'|'ml.c5.4xlarge'|'ml.c5.9xlarge'|'ml.c5.18xlarge',
-    'InstanceType': 'ml.p2.8xlarge',
+    'InstanceType': 'ml.p2.xlarge',
     'InstanceCount': 1,
     'VolumeSizeInGB': 5
     #'VolumeKmsKeyId': 'string'
