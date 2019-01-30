@@ -2,9 +2,9 @@ const _ = require('lodash');
 
 const labels = [
   'termite_tubes', 
-  'hot_water_expansion_tank',
-  'asbestos_paper_insulation',
-  'pedestal_sump_pump',
+//  'hot_water_expansion_tank',
+//  'asbestos_paper_insulation',
+//  'pedestal_sump_pump',
   'validation1'
 ];
 
