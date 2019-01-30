@@ -7,14 +7,6 @@
       "depth": 3
     }
   ],
-  "annotations": [
-    {
-      "class_id": 2,
-      "left": 544,
-      "width": 360,
-      "top": 375,
-      "height": 515
-    }
-  ],
+  "annotations": [],
   "categories": []
 }
