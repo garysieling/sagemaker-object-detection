@@ -1,6 +1,7 @@
 import boto3
 from datetime import datetime
 import time
+import sys
 
 client = boto3.client('sagemaker')
 
@@ -150,7 +151,7 @@ response = client.create_training_job(
   Tags=[
     {
       'Key': 'objectdetection',
-      'Value': 'termites'
+      'Value': sys.argv[1]
     },
   ],
   EnableNetworkIsolation=False,
