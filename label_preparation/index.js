@@ -38,7 +38,22 @@ labelMapping[9] = 'dryer';
 labelMapping[10] = 'smoke_detector';
 labelMapping[11] = 'furnace';
 
-const classNames = _.keys(labelMapping).map(
+const uniqLabels = _.uniq(
+  labels.map(
+    (label) => classIds[label]
+  ).map(
+    (id) => labelMapping[id]
+  ).filter( 
+    (x) => !!x
+  )
+);
+
+console.log(uniqLabels);
+console.log(uniqLabels.length);
+
+const classNames = _.keys(labelMapping).filter(
+  (key) => uniqLabels.includes(key)
+).map(
   (key) => {
     return {
       "class_id": parseInt(key),
@@ -108,15 +123,22 @@ labels.map(
               console.log(label);
             }
 
+            const labelId = classIds[label];
+            const remapped = labelMapping[labelId];
+            if (uniqLabels.indexOf(remapped) < 0) {
+              //console.log(label);
+              return;
+            }
+
             return {
-              class_id: parseInt(classIds[label]),
+              class_id: parseInt(labelId),
               left: Math.round(x1*imageWidth),
               width: Math.round(width*imageWidth),
               top: Math.round(y1*imageHeight),
               height: Math.round(height*imageHeight)
             };
 			    }
-		    )
+		    ).filter( (x) => !!x )
 
         const filename = file.substring(0, file.lastIndexOf('.'));
 
@@ -136,11 +158,11 @@ labels.map(
         fs.writeFileSync('./' + aws_labels_dir + '/' + filename + '.json', 
 		    	JSON.stringify(aws_data, null, 2)); 
         //fs.writeFileSync('./' + labels_dir + '/' + filename + '.txt', labels);
-        if (Math.random() > 0.25) {
+        /*if (Math.random() > 0.25) {
 			    train += out + "\n";
         } else {
 			    test += out + "\n";
-        }
+        }*/
     		// console.log(data)
 	    }
     );
@@ -148,5 +170,5 @@ labels.map(
 );
 
 fs.writeFileSync('images.sh', script);
-fs.writeFileSync('cfg/train.txt', train);
-fs.writeFileSync('cfg/test.txt', test);
+//fs.writeFileSync('cfg/train.txt', train);
+//fs.writeFileSync('cfg/test.txt', test);
