@@ -2,9 +2,9 @@ const _ = require('lodash');
 
 const labels = [
   'termite_tubes', 
-//  'hot_water_expansion_tank',
-//  'asbestos_paper_insulation',
-//  'pedestal_sump_pump',
+  'hot_water_expansion_tank',
+  'asbestos_paper_insulation',
+  'pedestal_sump_pump',
   'validation1'
 ];
 
@@ -51,6 +51,9 @@ const uniqLabels = _.uniq(
 console.log(uniqLabels);
 console.log(uniqLabels.length);
 
+let validationCount = {};
+let annotationCount = {};
+
 const classNames = _.keys(labelMapping).filter(
   (key) => uniqLabels.includes(key)
 ).map(
@@ -85,9 +88,10 @@ labels.map(
     	(data) => {
         if (!data.annotation) { return ; }
 
+        const isValidation = label.indexOf('validation') >= 0;
         //console.log(JSON.stringify(data, null, 2));
-        const labels_dir = label === 'validation1' ? 'validation_txt' : 'labels';
-        const aws_labels_dir = label === 'validation1' ? 'validation_labels' : 'aws_labels';
+        const labels_dir = label === isValidation ? 'validation_txt' : 'labels';
+        const aws_labels_dir = label === isValidation ? 'validation_labels' : 'aws_labels';
         const images_dir = 'images';
         const file = data.content.replace(/.*[/]/, '');
         const out = images_dir + '/' + file.replace(/[.]jpeg/, '.jpg');
@@ -130,6 +134,12 @@ labels.map(
               return;
             }
 
+            if (isValidation) {
+              validationCount[label] = (validationCount[label] || 0) + 1;
+            } else {
+              annotationCount[label] = (annotationCount[label] || 0) + 1;
+            }
+
             return {
               class_id: parseInt(labelId),
               left: Math.round(x1*imageWidth),
@@ -155,8 +165,10 @@ labels.map(
           "categories": classNames
         };
 
-        fs.writeFileSync('./' + aws_labels_dir + '/' + filename + '.json', 
-		    	JSON.stringify(aws_data, null, 2)); 
+        if (awsAnnotations.length > 0) {
+          fs.writeFileSync('./' + aws_labels_dir + '/' + filename + '.json', 
+		      	JSON.stringify(aws_data, null, 2)); 
+        }
         //fs.writeFileSync('./' + labels_dir + '/' + filename + '.txt', labels);
         /*if (Math.random() > 0.25) {
 			    train += out + "\n";
@@ -172,3 +184,6 @@ labels.map(
 fs.writeFileSync('images.sh', script);
 //fs.writeFileSync('cfg/train.txt', train);
 //fs.writeFileSync('cfg/test.txt', test);
+
+console.log('Annotation count: ' + JSON.stringify(annotationCount, null, 2));
+console.log('Validation count: ' + JSON.stringify(validationCount, null, 2));
