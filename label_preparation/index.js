@@ -127,17 +127,17 @@ labels.map(
               console.log(label);
             }
 
+            if (isValidation) {
+              validationCount[label] = (validationCount[label] || 0) + 1;
+            } else {
+              annotationCount[label] = (annotationCount[label] || 0) + 1;
+            }
+
             const labelId = classIds[label];
             const remapped = labelMapping[labelId];
             if (uniqLabels.indexOf(remapped) < 0) {
               //console.log(label);
               return;
-            }
-
-            if (isValidation) {
-              validationCount[label] = (validationCount[label] || 0) + 1;
-            } else {
-              annotationCount[label] = (annotationCount[label] || 0) + 1;
             }
 
             return {
