@@ -1,0 +1,20 @@
+{
+  "file": "images/ec5e28c3-66a2-49f9-854c-e83a39b5be97___pedestal%20sump%20pump_OIP.pL7WOgN4iFLkKNR6w3sUOQHaS0.jpg",
+  "image_size": [
+    {
+      "width": 474,
+      "height": 1204,
+      "depth": 3
+    }
+  ],
+  "annotations": [
+    {
+      "class_id": 3,
+      "left": 19,
+      "width": 420,
+      "top": 7,
+      "height": 1183
+    }
+  ],
+  "categories": []
+}

@@ -1,0 +1,20 @@
+{
+  "file": "images/9b311343-5f13-4699-8aef-73f60819699d___asbestos%20paper%20insulation_OIP.4msHuwnETX10KFYul0YpYAHaFj.jpg",
+  "image_size": [
+    {
+      "width": 474,
+      "height": 355,
+      "depth": 3
+    }
+  ],
+  "annotations": [
+    {
+      "class_id": 2,
+      "left": 174,
+      "width": 295,
+      "top": 3,
+      "height": 348
+    }
+  ],
+  "categories": []
+}

@@ -1,0 +1,20 @@
+{
+  "file": "images/b08f6b2f-27fa-4eac-81ee-3c2f722f3d93___hot_water_expansion_tank_OIP.n5H1wix99V7XEmV_N1aMEQHaI1.jpg",
+  "image_size": [
+    {
+      "width": 474,
+      "height": 565,
+      "depth": 3
+    }
+  ],
+  "annotations": [
+    {
+      "class_id": 1,
+      "left": 202,
+      "width": 261,
+      "top": 211,
+      "height": 335
+    }
+  ],
+  "categories": []
+}
