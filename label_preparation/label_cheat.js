@@ -12,6 +12,7 @@ files.map(
         "content": "images/" + file,
         "annotation":[
           {
+            "label": [type],
             "shape":"rectangle",
             "points":[[0,0],[1,0],[0,1],[1,1]],
             "notes":"",

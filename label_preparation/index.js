@@ -5,7 +5,8 @@ const labels = [
   'hot_water_expansion_tank',
   'asbestos_paper_insulation',
   'pedestal_sump_pump',
-  'validation1'
+  'validation1',
+  'validation_breaker_box'
 ];
 
 const classIds = {}
