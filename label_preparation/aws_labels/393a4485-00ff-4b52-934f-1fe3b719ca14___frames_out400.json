@@ -1,0 +1,34 @@
+{
+  "file": "images/393a4485-00ff-4b52-934f-1fe3b719ca14___frames_out400.jpg",
+  "image_size": [
+    {
+      "width": 1080,
+      "height": 1920,
+      "depth": 3
+    }
+  ],
+  "annotations": [
+    {
+      "class_id": 13,
+      "left": 399,
+      "width": 527,
+      "top": 1078,
+      "height": 833
+    },
+    {
+      "class_id": 5,
+      "left": 300,
+      "width": 247,
+      "top": 1119,
+      "height": 455
+    },
+    {
+      "class_id": 15,
+      "left": 9,
+      "width": 125,
+      "top": 860,
+      "height": 557
+    }
+  ],
+  "categories": []
+}

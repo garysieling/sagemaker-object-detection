@@ -1,29 +1,57 @@
 const _ = require('lodash');
 
 const labels = [
+  'smoke_detector',
+  'fire_damage',
+  'breaker_box',
+  'furnace',
+  'fuel_tank',
+  'washer',
+  'dryer',
+  'sump_pump',
   'termite_tubes', 
   'hot_water_expansion_tank',
   'asbestos_paper_insulation',
   'pedestal_sump_pump',
+  'water_softener',
   'validation1',
-  'validation_breaker_box'
+  'validation_breaker_box',
+  'validation_dryer',
+  'validation_furnace',
+  'validation_hot_water_expansion_tank2',
+  'validation_hot_water_expansion_tank',
+  'validation_oil_tank',
+  'validation_sump_pump',
+  'validation_washer',
+  'validation_water_filter1',
+  'validation_water_filter2'
 ];
 
 const classIds = {}
 classIds['termite_tubes'] = 0;
 classIds['termite tubes'] = 0;
 classIds['hot_water_expansion_tank'] = 1;
+classIds['hot_water_expansion_tank2'] = 1;
 classIds['asbestos'] = 2;
 classIds['asbestos_paper_insulation'] = 2;
 classIds['pedestal_sump_pump'] = 3;
 classIds['fuel_tank'] = 4;
 classIds['water_softener'] = 5;
+classIds['water_filter1'] = 5;
+classIds['water_filter2'] = 5;
 classIds['breaker_box'] = 6;
 classIds['fire_damage'] = 7;
 classIds['washer'] = 8;
 classIds['dryer'] = 9;
 classIds['smoke_detector'] = 10;
 classIds['furnace'] = 11;
+classIds['sump_pump'] = 12;
+classIds['fuel_tank'] = 13;
+classIds['oil_tank'] = 13;
+classIds['furnace'] = 14;
+classIds['breaker_box'] = 15;
+classIds['fire_damage'] = 16;
+classIds['smoke_detector'] = 17;
 
 const labelMapping = {};
 labelMapping[0] = 'termite_tubes';
@@ -38,6 +66,12 @@ labelMapping[8] = 'washer';
 labelMapping[9] = 'dryer';
 labelMapping[10] = 'smoke_detector';
 labelMapping[11] = 'furnace';
+labelMapping[12] = 'sump_pump';
+labelMapping[13] = 'oil_tank';
+labelMapping[14] = 'furnace';
+labelMapping[15] = 'breaker_box';
+labelMapping[16] = 'fire_damage';
+labelMapping[17] = 'smoke_detector';
 
 const uniqLabels = _.uniq(
   labels.map(
@@ -75,7 +109,13 @@ let train = '';
 
 labels.map(
   (label, index) => {
-    const text = fs.readFileSync(label + '.json', 'utf8');
+    const labelFile = label + '.json';
+    if (!fs.existsSync(labelFile)) {
+      console.log('No samples for ' + labelFile);
+      return;
+    }
+
+    const text = fs.readFileSync(labelFile, 'utf8');
     const data = text.split(/[\r\n]/);
 
     data.filter(
@@ -128,18 +168,20 @@ labels.map(
               console.log(label);
             }
 
-            if (isValidation) {
-              validationCount[label] = (validationCount[label] || 0) + 1;
-            } else {
-              annotationCount[label] = (annotationCount[label] || 0) + 1;
-            }
-
-            const labelId = classIds[label];
+            const validationId = label.replace('validation_', '');
+            const labelId = classIds[validationId];
             const remapped = labelMapping[labelId];
             if (uniqLabels.indexOf(remapped) < 0) {
-              //console.log(label);
+              console.log(label, labelId, remapped, validationId);
               return;
             }
+
+            if (isValidation) {
+              validationCount[remapped] = (validationCount[remapped] || 0) + 1;
+            } else {
+              annotationCount[remapped] = (annotationCount[remapped] || 0) + 1;
+            }
+
 
             return {
               class_id: parseInt(labelId),

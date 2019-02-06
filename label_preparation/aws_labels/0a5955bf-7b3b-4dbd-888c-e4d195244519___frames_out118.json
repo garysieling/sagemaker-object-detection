@@ -1,0 +1,27 @@
+{
+  "file": "images/0a5955bf-7b3b-4dbd-888c-e4d195244519___frames_out118.jpg",
+  "image_size": [
+    {
+      "width": 1080,
+      "height": 1920,
+      "depth": 3
+    }
+  ],
+  "annotations": [
+    {
+      "class_id": 8,
+      "left": 3,
+      "width": 238,
+      "top": 887,
+      "height": 488
+    },
+    {
+      "class_id": 9,
+      "left": 479,
+      "width": 405,
+      "top": 872,
+      "height": 589
+    }
+  ],
+  "categories": []
+}

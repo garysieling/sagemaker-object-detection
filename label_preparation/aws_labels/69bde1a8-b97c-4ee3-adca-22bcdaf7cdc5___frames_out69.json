@@ -9,6 +9,13 @@
   ],
   "annotations": [
     {
+      "class_id": 14,
+      "left": 6,
+      "width": 791,
+      "top": 697,
+      "height": 1220
+    },
+    {
       "class_id": 1,
       "left": 565,
       "width": 485,

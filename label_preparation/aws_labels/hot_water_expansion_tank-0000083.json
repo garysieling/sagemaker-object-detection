@@ -1,0 +1,20 @@
+{
+  "file": "images/hot_water_expansion_tank-0000083.jpg",
+  "image_size": [
+    {
+      "width": 500,
+      "height": 500,
+      "depth": 3
+    }
+  ],
+  "annotations": [
+    {
+      "class_id": 1,
+      "left": 0,
+      "width": 500,
+      "top": 0,
+      "height": 500
+    }
+  ],
+  "categories": []
+}
